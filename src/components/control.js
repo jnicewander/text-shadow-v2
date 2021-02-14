@@ -4,8 +4,7 @@ const Control = ({ values: { size, color, direction }, index, handleControlInput
 
   return (
     <div>
-      {/* replace with labels */}
-      <span>Shadow {index}</span>      
+      <span>Shadow {index + 1}</span>      
       <input
         aria-label="size"
         type="number" 
