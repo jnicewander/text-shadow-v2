@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Control from './components/control'
+import ControlList from './components/control-list'
 import buildString from './utilities/build-string'
 import { randomSize, randomColor } from './utilities/random-shadow'
 import './App.css';
@@ -37,17 +37,10 @@ return (
     <div>
       <h1 style={shadowStyle}>Text Shadows VII</h1>
       <p>Result is: {result};</p>
-      {
-        controls.length &&
-        controls.map((values, index) => (
-          <Control
-            key={index}                      
-            values={values}
-            index={index}
-            handleControlInputs={handleControlInputs}            
-          />
-        ))
-      }
+      <ControlList 
+        controls={controls}
+        handleControlInputs={handleControlInputs}
+      />
       <button
         type='button'
         onClick={addControl}
