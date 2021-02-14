@@ -1,5 +1,5 @@
 function buildString(controlsArray) {
-  let result = `text-shadow: `;
+  let result = ``;
   let size = 1; 
 
   controlsArray.forEach(control=> {

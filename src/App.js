@@ -6,6 +6,9 @@ import './App.css';
 
 function App() {
 const [result, setResult] = useState('')
+const shadowStyle = {
+  "text-shadow": result
+}
 
 // spreading the control variable into state allows us to clone and not mutate
 const control = { size: '3', color: '#202020', direction: '' }
@@ -32,6 +35,7 @@ useEffect(() => {
 
 return (
     <div>
+      <h1 style={shadowStyle}>Text Shadows VII</h1>
       <p>Result is: {result};</p>
       {
         controls.length &&
