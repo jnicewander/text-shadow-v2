@@ -6,9 +6,8 @@ const Control = ({ values: { size, color, direction }, index, handleControlInput
     <div>
       {/* replace with labels */}
       <span>Shadow {index}</span>      
-      <label>
-      Size
       <input
+        aria-label="size"
         type="number" 
         name="size"
         value={size} 
@@ -16,28 +15,22 @@ const Control = ({ values: { size, color, direction }, index, handleControlInput
         data-index={index}
         onChange={(e, index) => handleControlInputs(e, index)}
       />
-      </label>
-      <label>
-      Color
       <input 
+        aria-label="color"
         type="text" 
         name="color"
         value={color}
         data-index={index}
         onChange={(e, index) => handleControlInputs(e, index)} 
       />
-      </label>
-      <label>
-      Direction
-      <input 
+      <input
+        aria-label="direction" 
         type="text" 
         name="direction" 
         value={direction}
         data-index={index}
         onChange={(e) => handleControlInputs(e)}
       />
-      </label>
-
     </div>
   )
 }
