@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import Control from './components/control'
+import buildString from './utilities/build-string'
+import { randomSize, randomColor } from './utilities/random-shadow'
 import './App.css';
 
 function App() {
 const [result, setResult] = useState('')
 
 // spreading the control variable into state allows us to clone and not mutate
-const control = { size: '', color: '', direction: '' }
+const control = { size: '3', color: '#202020', direction: '' }
 const [controls, setControls] = useState([ { ...control }])
 
 const addControl = (e) => {
   e.preventDefault()
+  control.size = randomSize()
+  control.color = randomColor()
   setControls([ ...controls, { ...control }])
 }
 
@@ -22,12 +26,13 @@ const handleControlInputs = (e) => {
 }
 
 useEffect(() => {
-  // text-shadow: num, num, color, num, num, color;
-  console.log(controls)
+  const result = buildString(controls)
+  setResult(result)
 }, [controls])
 
 return (
     <div>
+      <p>Result is: {result};</p>
       {
         controls.length &&
         controls.map((values, index) => (
