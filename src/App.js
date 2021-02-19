@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import Header from './components/header'
 import ControlList from './components/control-list'
 import buildString from './utilities/build-string'
 import { randomSize, randomColor } from './utilities/random-shadow'
@@ -35,6 +36,7 @@ useEffect(() => {
 
 return (
     <div>
+      <Header />
       <h1 style={shadowStyle}>Text Shadows VII</h1>
       <p>Result is: {result};</p>
       <ControlList 
