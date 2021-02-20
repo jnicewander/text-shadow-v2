@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Direction = ({ handleControlInputs }) => {
+const Direction = ({ direction, handleControlInputs }) => {
   return (
     <div aria-label="Shadow Direction">
       <input
@@ -8,6 +8,7 @@ const Direction = ({ handleControlInputs }) => {
         type="radio" 
         name="direction" 
         value="bottomRight"
+        checked={direction === "bottomRight"}
         onChange={(e) => handleControlInputs(e)}
       />
       <input
@@ -15,6 +16,7 @@ const Direction = ({ handleControlInputs }) => {
         type="radio" 
         name="direction" 
         value="bottomLeft"
+        checked={direction === "bottomLeft"}
         onChange={(e) => handleControlInputs(e)}
       />
       <input
@@ -22,6 +24,7 @@ const Direction = ({ handleControlInputs }) => {
         type="radio" 
         name="direction" 
         value="topLeft"
+        checked={direction === "topLeft"}
         onChange={(e) => handleControlInputs(e)}
       />
       <input
@@ -29,6 +32,7 @@ const Direction = ({ handleControlInputs }) => {
         type="radio" 
         name="direction" 
         value="topRight"
+        checked={direction === "topRight"}
         onChange={(e) => handleControlInputs(e)}
       />                  
     </div>
