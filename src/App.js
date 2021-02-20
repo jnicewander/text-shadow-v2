@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Header from './components/header'
 import ControlList from './components/control-list'
+import Direction from './components/direction'
 import buildString from './utilities/build-string'
 import { randomSize, randomColor } from './utilities/random-shadow'
 import './App.css';
@@ -8,12 +9,14 @@ import './App.css';
 function App() {
 const [result, setResult] = useState('')
 const shadowStyle = {
-  "text-shadow": result
+  "textShadow": result
 }
 
 // spreading the control variable into state allows us to clone and not mutate
-const control = { size: '3', color: '#202020', direction: '' }
+const control = { size: '3', color: '#202020' }
 const [controls, setControls] = useState([ { ...control }])
+const [direction, setDirection] = useState('bottomRight')
+console.log('Direct: ', direction)
 
 const addControl = (e) => {
   e.preventDefault()
@@ -24,21 +27,28 @@ const addControl = (e) => {
 
 // e.target.index returns undefined when passed as index={index} - find method to pass index without data attributes
 const handleControlInputs = (e) => {
+  if(e.target.name === 'direction') {
+    setDirection(e.target.value)
+    return 
+  }
   const updatedControls = [...controls]
   updatedControls[e.target.dataset.index][e.target.name] = e.target.value
   setControls(updatedControls)
 }
 
 useEffect(() => {
-  const result = buildString(controls)
+  const result = buildString(controls, direction)
   setResult(result)
-}, [controls])
+}, [controls, direction])
 
 return (
     <div>
       <Header />
       <h1 style={shadowStyle}>Text Shadows VII</h1>
-      <p>Result is: {result};</p>
+      <Direction
+        direction={direction} 
+        handleControlInputs={handleControlInputs}
+      />
       <ControlList 
         controls={controls}
         handleControlInputs={handleControlInputs}

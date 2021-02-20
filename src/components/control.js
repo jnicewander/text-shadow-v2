@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Control = ({ values: { size, color, direction }, index, handleControlInputs }) => {
+const Control = ({ values: { size, color }, index, handleControlInputs }) => {
 
   return (
-    <div>
+    <li>
       <span>Shadow {index + 1}</span>      
       <input
         aria-label="size"
@@ -22,15 +22,7 @@ const Control = ({ values: { size, color, direction }, index, handleControlInput
         data-index={index}
         onChange={(e, index) => handleControlInputs(e, index)} 
       />
-      <input
-        aria-label="direction" 
-        type="text" 
-        name="direction" 
-        value={direction}
-        data-index={index}
-        onChange={(e) => handleControlInputs(e)}
-      />
-    </div>
+    </li>
   )
 }
 
