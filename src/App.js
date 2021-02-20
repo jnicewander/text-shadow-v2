@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Header from './components/header'
+import DisplayPanel from './components/display-panel'
 import ControlPanel from './components/control-panel'
 import buildString from './utilities/build-string'
 import { randomSize, randomColor } from './utilities/random-shadow'
@@ -42,14 +43,15 @@ function App() {
   return (
       <div>
         <Header />
-        <h1 style={shadowStyle}>Text Shadows VII</h1>
+        <DisplayPanel 
+          shadowStyle={shadowStyle}
+        />
         <ControlPanel
           direction={direction} 
           controls={controls}
           handleControlInputs={handleControlInputs}
           addControl={addControl}
         />
-        
       </div>
     );
 }
