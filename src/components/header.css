@@ -1,0 +1,12 @@
+.masthead {
+  padding: 1em;
+  text-align: center;
+}
+
+.masthead .masthead-title {
+  font-weight: 800;
+}
+
+.masthead-title .masthead-link {
+  color: #000;
+}
