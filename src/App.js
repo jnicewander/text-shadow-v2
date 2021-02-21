@@ -43,15 +43,17 @@ function App() {
   return (
       <>
         <Header />
-        <DisplayPanel 
-          shadowStyle={shadowStyle}
-        />
-        <ControlPanel
-          direction={direction} 
-          controls={controls}
-          handleControlInputs={handleControlInputs}
-          addControl={addControl}
-        />
+        <div className='app-main'>          
+          <ControlPanel
+            direction={direction} 
+            controls={controls}
+            handleControlInputs={handleControlInputs}
+            addControl={addControl}
+          />
+          <DisplayPanel 
+            shadowStyle={shadowStyle}
+          />
+        </div>
       </>
     );
 }
