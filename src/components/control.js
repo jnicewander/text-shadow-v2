@@ -4,7 +4,6 @@ const Control = ({ values: { size, color }, index, handleControlInputs }) => {
 
   return (
     <li>
-      <span>Shadow {index + 1}</span>      
       <input
         aria-label="size"
         type="number" 

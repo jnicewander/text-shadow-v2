@@ -6,7 +6,6 @@ const ControlList = ({ controls, handleControlInputs }) => {
     <ul>
       <li>Size</li>
       <li>Color</li>
-      <li>Direction</li>
       {
         controls.length &&
           controls.map((values, index) => (
