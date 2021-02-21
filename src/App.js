@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Header from './components/header'
+import About from './components/about'
 import DisplayPanel from './components/display-panel'
 import ControlPanel from './components/control-panel'
 import buildString from './utilities/build-string'
@@ -16,6 +17,12 @@ function App() {
   const control = { size: '3', color: '#202020' }
   const [controls, setControls] = useState([ { ...control }])
   const [direction, setDirection] = useState('bottomRight')
+  const [displayAbout, setDisplayAbout] = useState(false)
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    setDisplayAbout(!displayAbout)
+  }
 
   const addControl = (e) => {
     e.preventDefault()
@@ -41,18 +48,30 @@ function App() {
   }, [controls, direction])
 
   return (
-      <div>
-        <Header />
-        <DisplayPanel 
-          shadowStyle={shadowStyle}
+      <>
+        <Header 
+          handleClick={handleClick}
         />
-        <ControlPanel
-          direction={direction} 
-          controls={controls}
-          handleControlInputs={handleControlInputs}
-          addControl={addControl}
-        />
-      </div>
+        {displayAbout
+          ? 
+            <About
+              handleClick={handleClick}
+            />
+          : 
+            <>
+              <DisplayPanel 
+                shadowStyle={shadowStyle}
+              />
+              <ControlPanel
+                direction={direction} 
+                controls={controls}
+                handleControlInputs={handleControlInputs}
+                addControl={addControl}
+              />
+            </>
+        }
+        
+      </>
     );
 }
 
