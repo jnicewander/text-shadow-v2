@@ -1,0 +1,12 @@
+.container {
+  text-align: center;
+  padding: 1em;
+}
+
+.title {
+  font-weight: 900;
+}
+
+.link {
+  color: #000;
+}

@@ -1,14 +1,14 @@
 import React from 'react'
-import './header.css'
+import styles from  './header.module.css'
 
 const Header = () => {
 
   return (
-    <header className='masthead'>
-      <h1 className="masthead-title">
+    <header className={styles.container}>
+      <h1 className={styles.title}>
         <a 
           href='/'
-          className="masthead-link"
+          className={styles.link}
         >
             3D Text Shadow Builder
         </a>
