@@ -27,8 +27,8 @@ function App() {
   const handleDelete = (e) => {
     e.preventDefault()
     const updatedControls = [...controls]
-    console.log('This is updatedControls: ', updatedControls)
-    console.log('You clicked: ', e.target.dataset)
+    updatedControls.splice(e.target.dataset.index, 1)
+    setControls(updatedControls)
   }
 
   // e.target.index returns undefined when passed as index={index} - find method to pass index without data attributes
