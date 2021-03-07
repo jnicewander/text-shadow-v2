@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const DisplayText = ({ isEditing, setEditing, sampleText, setSampleText, shadowStyle }) => {
+const DisplayText = ({ result }) => {
+  const [isEditing, setEditing] = useState(false)
+  const [sampleText, setSampleText] = useState('3D Text Shadows')
+  const testShadowStyle = {
+    "textShadow": result
+  }
 
   return (
     <section>
@@ -20,7 +25,7 @@ const DisplayText = ({ isEditing, setEditing, sampleText, setSampleText, shadowS
         <div
           onClick={() => setEditing(true)}
         >
-          <span style={shadowStyle}>
+          <span style={testShadowStyle}>
             {sampleText || "Edit This"}
           </span>
         </div>

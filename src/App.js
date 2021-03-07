@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Header from './components/header'
-import DisplayPanel from './components/display-panel'
+import Result from './components/Result'
 import DirectionGroup from './components/DirectionGroup'
 import ControlGroup from './components/ControlGroup'
 import buildString from './utilities/build-string'
@@ -8,10 +8,8 @@ import './App.css';
 
 function App() {
   const [result, setResult] = useState('')
-  const shadowStyle = {
-    "textShadow": result
-  }
-  // spreading the control variable into state allows us to clone and not mutate
+  
+  // spreading the initialShadow into initial state allows us to clone and not mutate
   const initialShadow = { 
     size: '3', 
     color: '#202020' 
@@ -39,8 +37,8 @@ function App() {
               setControls={setControls}
             />
           </div>
-          <DisplayPanel 
-            shadowStyle={shadowStyle}
+          <Result 
+            result={result}
           />
         </div>
       </>
