@@ -1,7 +1,16 @@
 import React from 'react'
 import DeleteButton from './DeleteButton'
 
-const Control = ({ values: { size, color }, index, handleControlInputs, handleDelete }) => {
+
+
+const Control = ({ values: { size, color }, index, handleControlInputs, controls, setControls }) => {
+
+  const handleDelete = (e) => {
+    e.preventDefault()
+    const updatedControls = [...controls]
+    updatedControls.splice(e.target.dataset.index, 1)
+    setControls(updatedControls)
+  }
 
   return (
     <li>
