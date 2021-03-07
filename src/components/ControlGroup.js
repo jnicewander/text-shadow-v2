@@ -2,13 +2,19 @@ import React from 'react'
 import Control from './Control'
 import { randomSize, randomColor } from '../utilities/random-shadow'
 
-const ControlList = ({ direction, initialShadow, controls, handleControlInputs, setControls }) => {
+const ControlList = ({ initialShadow, controls, setControls }) => {
 
   const addControl = (e) => {
     e.preventDefault()
     initialShadow.size = randomSize()
     initialShadow.color = randomColor()
     setControls([ ...controls, { ...initialShadow }])
+  }
+
+  const handleControlInputs = (e) => {
+    const updatedControls = [...controls]
+    updatedControls[e.target.dataset.index][e.target.name] = e.target.value
+    setControls(updatedControls)
   }
 
   return (

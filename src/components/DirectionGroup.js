@@ -1,6 +1,11 @@
 import React from 'react'
 
-const Direction = ({ direction, handleControlInputs }) => {
+const DirectionGroup = ({ direction, setDirection }) => {
+
+  const handleClick = (e) => {
+    setDirection(e.target.value)
+  }
+
   return (
     <div aria-label="Shadow Direction">
       <label>
@@ -11,7 +16,7 @@ const Direction = ({ direction, handleControlInputs }) => {
           name="direction" 
           value="bottomRight"
           checked={direction === "bottomRight"}
-          onChange={(e) => handleControlInputs(e)}
+          onChange={handleClick}
         />
       </label>
       <label>
@@ -22,7 +27,7 @@ const Direction = ({ direction, handleControlInputs }) => {
           name="direction" 
           value="bottomLeft"
           checked={direction === "bottomLeft"}
-          onChange={(e) => handleControlInputs(e)}
+          onChange={handleClick}
         />
       </label>
       <label>
@@ -33,7 +38,7 @@ const Direction = ({ direction, handleControlInputs }) => {
           name="direction" 
           value="topLeft"
           checked={direction === "topLeft"}
-          onChange={(e) => handleControlInputs(e)}
+          onChange={handleClick}
         />
       </label>
       <label>
@@ -44,11 +49,11 @@ const Direction = ({ direction, handleControlInputs }) => {
           name="direction" 
           value="topRight"
           checked={direction === "topRight"}
-          onChange={(e) => handleControlInputs(e)}
+          onChange={handleClick}
         />                  
       </label>
     </div>
   )
 }
 
-export default Direction
+export default DirectionGroup
