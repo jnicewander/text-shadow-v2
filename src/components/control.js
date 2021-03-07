@@ -1,11 +1,12 @@
 import React from 'react'
+import DeleteButton from './DeleteButton'
 
-const Control = ({ values: { size, color }, index, handleControlInputs }) => {
+const Control = ({ values: { size, color }, index, handleControlInputs, handleDelete }) => {
 
   return (
     <li>
       <input
-        aria-label="size"
+        aria-label="Size Input"
         type="number" 
         name="size"
         value={size} 
@@ -14,12 +15,17 @@ const Control = ({ values: { size, color }, index, handleControlInputs }) => {
         onChange={(e, index) => handleControlInputs(e, index)}
       />
       <input 
-        aria-label="color"
+        aria-label="Color Input"
         type="text" 
         name="color"
         value={color}
         data-index={index}
         onChange={(e, index) => handleControlInputs(e, index)} 
+      />
+      <DeleteButton
+        aria-label="Delete Button"
+        data-index={index} 
+        handleDelete={(e, index) => handleDelete(e, index)}
       />
     </li>
   )

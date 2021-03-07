@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Header from './components/header'
 import DisplayPanel from './components/display-panel'
-import ControlPanel from './components/control-panel'
+import ControlGroup from './components/ControlGroup'
 import buildString from './utilities/build-string'
 import { randomSize, randomColor } from './utilities/random-shadow'
 import './App.css';
@@ -14,7 +14,7 @@ function App() {
 
   // spreading the control variable into state allows us to clone and not mutate
   const control = { size: '3', color: '#202020' }
-  const [controls, setControls] = useState([ { ...control }])
+  const [controls, setControls] = useState([{ ...control }])
   const [direction, setDirection] = useState('bottomRight')
 
   const addControl = (e) => {
@@ -22,6 +22,13 @@ function App() {
     control.size = randomSize()
     control.color = randomColor()
     setControls([ ...controls, { ...control }])
+  }
+  
+  const handleDelete = (e) => {
+    e.preventDefault()
+    const updatedControls = [...controls]
+    console.log('This is updatedControls: ', updatedControls)
+    console.log('You clicked: ', e.target.dataset)
   }
 
   // e.target.index returns undefined when passed as index={index} - find method to pass index without data attributes
@@ -44,11 +51,12 @@ function App() {
       <>
         <Header />
         <div className='app-main'>          
-          <ControlPanel
+          <ControlGroup
             direction={direction} 
             controls={controls}
             handleControlInputs={handleControlInputs}
             addControl={addControl}
+            handleDelete={handleDelete}
           />
           <DisplayPanel 
             shadowStyle={shadowStyle}
