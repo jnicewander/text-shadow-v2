@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Header from './components/header'
 import DisplayPanel from './components/display-panel'
+import DirectionGroup from './components/DirectionGroup'
 import ControlGroup from './components/ControlGroup'
 import buildString from './utilities/build-string'
-import { randomSize, randomColor } from './utilities/random-shadow'
+
 import './App.css';
 
 function App() {
@@ -13,23 +14,9 @@ function App() {
   }
 
   // spreading the control variable into state allows us to clone and not mutate
-  const control = { size: '3', color: '#202020' }
-  const [controls, setControls] = useState([{ ...control }])
+  const initialShadow = { size: '3', color: '#202020' }
+  const [controls, setControls] = useState([{ ...initialShadow }])
   const [direction, setDirection] = useState('bottomRight')
-
-  const addControl = (e) => {
-    e.preventDefault()
-    control.size = randomSize()
-    control.color = randomColor()
-    setControls([ ...controls, { ...control }])
-  }
-  
-  const handleDelete = (e) => {
-    e.preventDefault()
-    const updatedControls = [...controls]
-    updatedControls.splice(e.target.dataset.index, 1)
-    setControls(updatedControls)
-  }
 
   // e.target.index returns undefined when passed as index={index} - find method to pass index without data attributes
   const handleControlInputs = (e) => {
@@ -50,14 +37,20 @@ function App() {
   return (
       <>
         <Header />
-        <div className='app-main'>          
-          <ControlGroup
-            direction={direction} 
-            controls={controls}
-            handleControlInputs={handleControlInputs}
-            addControl={addControl}
-            handleDelete={handleDelete}
-          />
+        <div className='app-main'>
+          <div>
+            <DirectionGroup
+              direction={direction}
+              handleControlInputs={handleControlInputs}
+            />
+            <ControlGroup
+              direction={direction}
+              initialShadow={initialShadow} 
+              controls={controls}
+              handleControlInputs={handleControlInputs}
+              setControls={setControls}
+            />
+          </div>
           <DisplayPanel 
             shadowStyle={shadowStyle}
           />

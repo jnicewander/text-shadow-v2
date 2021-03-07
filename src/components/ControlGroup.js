@@ -1,14 +1,18 @@
 import React from 'react'
-import DirectionGroup from './DirectionGroup'
 import Control from './Control'
+import { randomSize, randomColor } from '../utilities/random-shadow'
 
-const ControlList = ({ direction, controls, handleControlInputs, handleDelete, addControl }) => {
+const ControlList = ({ direction, initialShadow, controls, handleControlInputs, setControls }) => {
+
+  const addControl = (e) => {
+    e.preventDefault()
+    initialShadow.size = randomSize()
+    initialShadow.color = randomColor()
+    setControls([ ...controls, { ...initialShadow }])
+  }
+
   return (
     <section>
-      <DirectionGroup 
-        direction={direction} 
-        handleControlInputs={handleControlInputs}
-      />
       <ul>
         <li>Size</li>
         <li>Color</li>
@@ -20,7 +24,8 @@ const ControlList = ({ direction, controls, handleControlInputs, handleDelete, a
                 values={values}
                 index={index}
                 handleControlInputs={handleControlInputs}
-                handleDelete={handleDelete}
+                controls={controls}
+                setControls={setControls}
               />
             ))
         }
