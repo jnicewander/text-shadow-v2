@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdRemoveCircle } from 'react-icons/md'
+import { MdRemoveCircleOutline } from 'react-icons/md'
 import './DeleteButton.css'
 
 const DeleteButton = ({ handleDelete, ...rest }) => {
@@ -9,7 +9,7 @@ const DeleteButton = ({ handleDelete, ...rest }) => {
       onClick={handleDelete}
       {...rest}
     >
-      <MdRemoveCircle />
+      <MdRemoveCircleOutline />
     </button>
   )
 }
