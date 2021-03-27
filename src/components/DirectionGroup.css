@@ -1,0 +1,43 @@
+.DirectionGroup {
+}
+.DirectionLabel {
+  position: relative;
+  display: inline-block;
+  font-weight: bolder;
+  padding: 0;
+  margin: .15em;
+  color: #0D0D0D;
+  font-size: 2.5em;
+}
+.DirectionLabel:hover {
+  color: #35BDD0;
+}
+
+/* rotate the arrow icons so they point the correct direction */
+.DirectionLabel svg {
+  transform: rotate(135deg);
+}
+.DirectionLabel:nth-child(4) svg {
+  transform: rotate(225deg);
+}
+.DirectionLabel:nth-child(5) svg {
+  transform: rotate(315deg);
+}
+.DirectionLabel:nth-child(6) svg {
+  transform: rotate(45deg);
+  margin-right: 0;
+}
+
+/* hide radio input circle and retain functionality */
+.DirectionInput {
+  border: 2px solid red;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+.DirectionInput:checked + svg {
+  color: #35BDD0;
+}
+.DirectionInput:active + svg {
+  color: #758283;
+}
