@@ -23,9 +23,9 @@ function App() {
   }, [controls, direction])
 
   return (
-      <>
+      <div className='App'>
         <Header />
-        <div className='app-main'>
+        <div className='AppMain'>
           <div>
             <DirectionGroup
               direction={direction}
@@ -41,7 +41,7 @@ function App() {
             result={result}
           />
         </div>
-      </>
+      </div>
     );
 }
 
