@@ -1,6 +1,6 @@
 import React from 'react'
 import DeleteButton from './DeleteButton'
-
+import './Control.css'
 
 
 const Control = ({ values: { size, color }, index, handleControlInputs, controls, setControls }) => {
@@ -15,6 +15,7 @@ const Control = ({ values: { size, color }, index, handleControlInputs, controls
   return (
     <li>
       <input
+        className={`Control`}
         aria-label="Size Input"
         type="number" 
         name="size"
@@ -22,14 +23,17 @@ const Control = ({ values: { size, color }, index, handleControlInputs, controls
         min="1"
         data-index={index}
         onChange={(e, index) => handleControlInputs(e, index)}
+        autoComplete="off"
       />
       <input 
+        className={`Control`}
         aria-label="Color Input"
         type="text" 
         name="color"
         value={color}
         data-index={index}
-        onChange={(e, index) => handleControlInputs(e, index)} 
+        onChange={(e, index) => handleControlInputs(e, index)}
+        autoComplete="off" 
       />
       <DeleteButton
         aria-label="Delete Button"
