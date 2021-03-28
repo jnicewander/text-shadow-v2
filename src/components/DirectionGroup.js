@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaArrowUp } from 'react-icons/fa'
+import { FaArrowCircleUp } from 'react-icons/fa'
 import './DirectionGroup.css'
 
 const DirectionGroup = ({ direction, setDirection }) => {
@@ -28,7 +28,8 @@ const DirectionGroup = ({ direction, setDirection }) => {
           checked={direction === "bottomLeft"}
           onChange={handleClick}
         />
-        <FaArrowUp />
+        <FaArrowCircleUp />
+        <div className="SvgBackground"></div>
       </label>
       <label
         className="DirectionLabel"
@@ -42,7 +43,8 @@ const DirectionGroup = ({ direction, setDirection }) => {
           checked={direction === "topRight"}
           onChange={handleClick}
         />
-        <FaArrowUp />                  
+        <FaArrowCircleUp />
+        <div className="SvgBackground"></div>
       </label>
       <label
         className="DirectionLabel"
@@ -56,7 +58,8 @@ const DirectionGroup = ({ direction, setDirection }) => {
           checked={direction === "bottomRight"}
           onChange={handleClick}
         />
-        <FaArrowUp />
+        <FaArrowCircleUp />
+        <div className="SvgBackground"></div>
       </label>
       <label
         className="DirectionLabel"
@@ -70,7 +73,8 @@ const DirectionGroup = ({ direction, setDirection }) => {
           checked={direction === "topLeft"}
           onChange={handleClick}
         />
-        <FaArrowUp />
+        <FaArrowCircleUp />
+        <div className="SvgBackground"></div>
       </label>
       
     </div>
