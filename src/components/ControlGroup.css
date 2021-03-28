@@ -15,5 +15,5 @@
 .ControlGroup ul {
   min-height: 300px;
   height: 50vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
