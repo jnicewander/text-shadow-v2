@@ -1,6 +1,7 @@
 import React from 'react'
 import Control from './Control'
 import { randomSize, randomColor } from '../utilities/random-shadow'
+import './ControlGroup.css'
 
 const ControlList = ({ initialShadow, controls, setControls }) => {
 
@@ -18,10 +19,14 @@ const ControlList = ({ initialShadow, controls, setControls }) => {
   }
 
   return (
-    <section>
+    <section className="ControlGroup">
+      <header>
+        <h2>Controls</h2>
+        <h3>Size</h3>
+        <h3>Color</h3>
+        <h3>Delete</h3>
+      </header>
       <ul>
-        <li>Size</li>
-        <li>Color</li>
         {
           controls.length &&
             controls.map((values, index) => (
