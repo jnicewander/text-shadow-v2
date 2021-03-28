@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Result.css'
 
 const DisplayText = ({ result }) => {
   const [isEditing, setEditing] = useState(false)
@@ -8,24 +9,29 @@ const DisplayText = ({ result }) => {
   }
 
   return (
-    <section>
+    <section className="Result">
       {isEditing ? (
         <div
           onBlur={() => setEditing(false)}
         >
           <input
+            className="SampleText"
             type="text"
             name="sampleText"
             placeholder="Enter Your Text"
             value={sampleText}
             onChange={e => setSampleText(e.target.value)}
+            autoFocus
           />
         </div>
       ): (
         <div
           onClick={() => setEditing(true)}
         >
-          <span style={testShadowStyle}>
+          <span
+            className="SampleText" 
+            style={testShadowStyle}
+          >
             {sampleText || "Edit This"}
           </span>
         </div>

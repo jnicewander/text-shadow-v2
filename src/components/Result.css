@@ -1,0 +1,16 @@
+.Result {
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  height: 25vh;
+}
+.SampleText {
+  background: none;
+  border: none;
+  outline: none;
+  font: bold 16px "Poppins";
+  caret-color: #fff;
+  text-align: center;
+}
