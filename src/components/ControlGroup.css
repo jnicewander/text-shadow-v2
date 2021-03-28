@@ -1,7 +1,10 @@
 .ControlGroup {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  background-color: #0d0d0d;
+  color: #CAD5E2;
+  border-top: 1px solid #CAD5E2;
+  margin-top: .5em;
 }
 .ControlGroup header {
   display: grid;
@@ -11,7 +14,6 @@
 .ControlGroup header h2 {
   grid-column: 1 / 4;
 }
-
 .ControlGroup ul {
   min-height: 300px;
   height: 50vh;

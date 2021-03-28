@@ -45,7 +45,7 @@ const ControlList = ({ initialShadow, controls, setControls }) => {
         onClick={addControl}
       >
         Add Control
-      </button> 
+      </button>
     </section>
   )
 }
