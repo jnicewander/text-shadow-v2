@@ -1,4 +1,5 @@
-.Header {
+.Header, .Header h1 a {
   background-color: #0d0d0d;
+  color: #CAD5E2;
   border-bottom: 2px solid black;
 }
