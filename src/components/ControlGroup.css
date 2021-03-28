@@ -1,3 +1,8 @@
+.ControlGroup {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .ControlGroup header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -5,4 +10,10 @@
 }
 .ControlGroup header h2 {
   grid-column: 1 / 4;
+}
+
+.ControlGroup ul {
+  min-height: 300px;
+  height: 50vh;
+  overflow-y: scroll;
 }
