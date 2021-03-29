@@ -14,7 +14,7 @@
   border: none;
   outline: none;
   color: #fff;
-  font: bold 24px "Poppins";
+  font: bold 2rem "Poppins";
   caret-color: #fff;
   text-align: center;
   margin: 0;
@@ -24,7 +24,11 @@
 
 @media screen and (min-width: 750px) {
   .Result {
+    max-width: 60vw;
     min-height: 50vh;
     height: 100%;
+  }
+  .SampleText {
+    font-size: 2.5rem;
   }
 }
