@@ -1,5 +1,6 @@
 import React from 'react'
 import DeleteButton from './DeleteButton'
+import ColorPicker from './ColorPicker'
 import './Control.css'
 
 
@@ -35,6 +36,7 @@ const Control = ({ values: { size, color }, index, handleControlInputs, controls
         onChange={(e, index) => handleControlInputs(e, index)}
         autoComplete="off" 
       />
+      <ColorPicker />
       <DeleteButton
         aria-label="Delete Button"
         data-index={index} 

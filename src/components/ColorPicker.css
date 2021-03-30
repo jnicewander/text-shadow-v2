@@ -1,0 +1,15 @@
+.ColorPicker_Container {
+  position: relative;
+}
+.ColorPicker_Button {
+  border: none;
+  padding: .25em;
+  outline: none;
+  border-radius: 50%;
+  width: 1.75em;
+  height: 1.75em;
+}
+.ColorPicker_Modal {
+  position: absolute;
+  
+}
