@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Header from './components/Header'
 import Result from './components/Result'
 import DirectionGroup from './components/DirectionGroup'
-import ControlGroup from './components/ControlGroup'
+import ControlList from './components/ControlList'
 import buildString from './utilities/build-string'
 import './App.css';
 
@@ -31,7 +31,7 @@ function App() {
               direction={direction}
               setDirection={setDirection}
             />
-            <ControlGroup
+            <ControlList
               initialShadow={initialShadow} 
               controls={controls}
               setControls={setControls}

@@ -1,7 +1,7 @@
 import React from 'react'
 import Control from './Control'
 import { randomSize, randomColor } from '../utilities/random-shadow'
-import './ControlGroup.css'
+import './ControlList.css'
 
 const ControlList = ({ initialShadow, controls, setControls }) => {
 
