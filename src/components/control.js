@@ -4,7 +4,7 @@ import ColorPicker from './ColorPicker'
 import './Control.css'
 
 
-const Control = ({ values: { size, color }, index, handleControlInputs, controls, setControls }) => {
+const Control = ({ values: { size, color }, index, handleControlInputs, handleColorInput, controls, setControls }) => {
 
   const handleDelete = (e) => {
     e.preventDefault()
@@ -23,20 +23,15 @@ const Control = ({ values: { size, color }, index, handleControlInputs, controls
         value={size} 
         min="1"
         data-index={index}
-        onChange={(e, index) => handleControlInputs(e, index)}
+        onChange={e => handleControlInputs(e)}
         autoComplete="off"
       />
-      <input 
-        className={`Control`}
-        aria-label="Color Input"
-        type="text" 
-        name="color"
-        value={color}
-        data-index={index}
-        onChange={(e, index) => handleControlInputs(e, index)}
-        autoComplete="off" 
+      {/* TODO aria-label for color picker? */}
+      <ColorPicker
+        index={index}
+        color={color}
+        handleColorInput={handleColorInput}
       />
-      <ColorPicker />
       <DeleteButton
         aria-label="Delete Button"
         data-index={index} 
