@@ -15,7 +15,9 @@ const Control = ({ values: { size, color }, index, controls, setControls }) => {
   }
 
   return (
-    <li>
+    <li
+      className={`Control_Container`}
+    >
       <SizeInput 
         size={size}
         controls={controls}
