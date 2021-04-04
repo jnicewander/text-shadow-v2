@@ -1,10 +1,11 @@
 import React from 'react'
 import DeleteButton from './DeleteButton'
+import SizeInput from './SizeInput'
 import ColorPicker from './ColorPicker'
 import './Control.css'
 
 
-const Control = ({ values: { size, color }, index, handleControlInputs, controls, setControls }) => {
+const Control = ({ values: { size, color }, index, controls, setControls }) => {
 
   const handleDelete = (e) => {
     e.preventDefault()
@@ -15,17 +16,12 @@ const Control = ({ values: { size, color }, index, handleControlInputs, controls
 
   return (
     <li>
-      <input
-        className={`Control`}
-        aria-label="Size Input"
-        type="number" 
-        name="size"
-        value={size} 
-        min="1"
-        data-index={index}
-        onChange={e => handleControlInputs(e)}
-        autoComplete="off"
-      />
+      <SizeInput 
+        size={size}
+        controls={controls}
+        setControls={setControls}
+        index={index}
+      />    
       {/* TODO aria-label for color picker? */}
       <ColorPicker
         index={index}

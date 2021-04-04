@@ -1,0 +1,14 @@
+.SizeInput {
+  border: none;
+  background-color: #242B2E;
+  color: #CAD5E2;
+  outline: none;
+}
+/* remove arrows from number input field */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
