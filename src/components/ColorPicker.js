@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 import { ChromePicker } from 'react-color'
 import './ColorPicker.css'
 
-const ColorPicker = ({ handleColorInput, index }) => {
+const ColorPicker = ({ color, controls, setControls, index }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [hexColor, setHexColor] = useState("#fff")
-  
-  // could not find a way to pass the index to the ChromePicker to pass back out
-  const handleChange = (color) => {
-    const idx = index
-    setHexColor(color.hex)
-    handleColorInput(color.hex, idx)
+
+  const handleColorInput = (colorObject) => {
+    const idx = index    
+    const updatedControls = [...controls]
+    updatedControls[idx].color = colorObject.hex
+    setControls(updatedControls)
   }
 
   return (
@@ -20,10 +19,10 @@ const ColorPicker = ({ handleColorInput, index }) => {
     <button
       className={`ColorPicker_Button`}
       onClick={() => setIsOpen(!isOpen)}
-      style={{backgroundColor: hexColor}}
+      style={{backgroundColor: color}}
     >
     </button>
-    <span>{hexColor}</span>
+    <span>{color}</span>
     {
       isOpen &&
         <div
@@ -31,8 +30,8 @@ const ColorPicker = ({ handleColorInput, index }) => {
         >        
           <ChromePicker
             name="color"            
-            color={hexColor}
-            onChange={(color, e) => handleChange(color, e)}
+            color={color}
+            onChange={(color, e) => handleColorInput(color, e)}
           />
         </div>
     }

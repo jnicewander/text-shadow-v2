@@ -18,12 +18,6 @@ const ControlList = ({ initialShadow, controls, setControls }) => {
     setControls(updatedControls)
   }
 
-  const handleColorInput = (hexValue, index) => {
-    const updatedControls = [...controls]
-    updatedControls[index].color = hexValue
-    setControls(updatedControls)
-  }
-
   return (
     <section className="ControlGroup">
       <header>
@@ -41,7 +35,6 @@ const ControlList = ({ initialShadow, controls, setControls }) => {
                 values={values}
                 index={index}
                 handleControlInputs={handleControlInputs}
-                handleColorInput={handleColorInput}
                 controls={controls}
                 setControls={setControls}
               />

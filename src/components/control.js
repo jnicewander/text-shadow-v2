@@ -4,7 +4,7 @@ import ColorPicker from './ColorPicker'
 import './Control.css'
 
 
-const Control = ({ values: { size, color }, index, handleControlInputs, handleColorInput, controls, setControls }) => {
+const Control = ({ values: { size, color }, index, handleControlInputs, controls, setControls }) => {
 
   const handleDelete = (e) => {
     e.preventDefault()
@@ -30,7 +30,8 @@ const Control = ({ values: { size, color }, index, handleControlInputs, handleCo
       <ColorPicker
         index={index}
         color={color}
-        handleColorInput={handleColorInput}
+        controls={controls}
+        setControls={setControls}
       />
       <DeleteButton
         aria-label="Delete Button"
