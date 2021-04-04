@@ -147,3 +147,7 @@ img {
 a {
   text-decoration: none;
 }
+
+input, button {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}

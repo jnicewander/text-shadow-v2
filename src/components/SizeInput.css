@@ -1,3 +1,19 @@
+.SizeInput_Container {
+  position: relative;
+}
+.SizeInput_Button {
+  border: none;
+  padding: .25em;
+  outline: none;
+  border-radius: 50%;
+  width: 1.75em;
+  height: 1.75em;
+  z-index: -1;
+}
+.SizeInput_Modal {
+  position: absolute;
+  z-index: 1;
+}
 .SizeInput {
   border: none;
   background-color: #242B2E;
@@ -12,3 +28,4 @@ input[type=number] {
   -moz-appearance: textfield;
   margin: 0;
 }
+
