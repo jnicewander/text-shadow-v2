@@ -2,12 +2,21 @@ import React from 'react'
 import { MdRemoveCircleOutline } from 'react-icons/md'
 import './DeleteButton.css'
 
-const DeleteButton = ({ handleDelete, ...rest }) => {
+const DeleteButton = ({ controls, setControls, index}) => {
+
+  const handleClick = e => {
+    console.log(e.dataset)
+    e.preventDefault()
+    const updatedControls = [...controls]
+    updatedControls.splice(index, 1)
+    setControls(updatedControls)
+  }
+
   return (
     <button
+      aria-label="Delete Button"
       className="DeleteButton"
-      onClick={handleDelete}
-      {...rest}
+      onClick={e => handleClick(e)}
     >
       <MdRemoveCircleOutline />
     </button>

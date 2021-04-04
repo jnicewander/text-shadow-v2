@@ -7,13 +7,6 @@ import './Control.css'
 
 const Control = ({ values: { size, color }, index, controls, setControls }) => {
 
-  const handleDelete = (e) => {
-    e.preventDefault()
-    const updatedControls = [...controls]
-    updatedControls.splice(e.target.dataset.index, 1)
-    setControls(updatedControls)
-  }
-
   return (
     <li
       className={`Control_Container`}
@@ -32,9 +25,9 @@ const Control = ({ values: { size, color }, index, controls, setControls }) => {
         setControls={setControls}
       />
       <DeleteButton
-        aria-label="Delete Button"
-        data-index={index} 
-        handleDelete={(e, index) => handleDelete(e, index)}
+        index={index}
+        controls={controls}
+        setControls={setControls}
       />
     </li>
   )
