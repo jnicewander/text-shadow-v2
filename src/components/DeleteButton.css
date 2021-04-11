@@ -1,15 +1,16 @@
 .DeleteButton {
-  background: none;
   border: none;
-  cursor: pointer;
   outline: none;  
+  background: #FF6666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: all 400ms;
 }
-
 .DeleteButton svg {
-  color: #FF6666;
-  transition: color 400ms;
+  color: #CAD5E2;
 }
-
-.DeleteButton:hover svg {
-  color: #E03B8B;
+.DeleteButton:hover {
+  background-color: #E03B8B;
 }

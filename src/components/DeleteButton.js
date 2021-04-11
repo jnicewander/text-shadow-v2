@@ -5,7 +5,6 @@ import './DeleteButton.css'
 const DeleteButton = ({ controls, setControls, index}) => {
 
   const handleClick = e => {
-    console.log(e.dataset)
     e.preventDefault()
     const updatedControls = [...controls]
     updatedControls.splice(index, 1)
