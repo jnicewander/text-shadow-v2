@@ -1,26 +1,4 @@
-.SizeInput_Container {
-  position: relative;
-}
-.SizeInput_Button {
-  border: none;
-  padding: .25em;
-  outline: none;
-  border-radius: 50%;
-  width: 1.75em;
-  height: 1.75em;
-  z-index: -1;
-}
-.SizeInput_Modal {
-  position: absolute;
-  z-index: 1;
-}
-.SizeInput {
-  border: none;
-  background-color: #242B2E;
-  color: #CAD5E2;
-  outline: none;
-}
-/* remove arrows from number input field */
+/* remove default arrows from number input field */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button,
 input[type=number] {
@@ -28,4 +6,31 @@ input[type=number] {
   -moz-appearance: textfield;
   margin: 0;
 }
-
+.SizeInput_Container {
+  display: flex;
+}
+.SizeInput_Buttons {
+  display: flex;
+  flex-direction: column;
+}
+.SizeInput_Container > button {
+  background: none;
+  border: none;
+  color: #CAD5E2;
+  outline: none;
+}
+.SizeInput_Container > button:first-child {
+  padding-left: .5em;
+}
+.SizeInput_Container > button:last-child {
+  padding-right: .5em;
+}
+.SizeInput {
+  text-align: center;
+  width: 2.75em;
+  border: none;
+  background-color: #242B2E;
+  color: #CAD5E2;
+  outline: none;
+  padding: .5em 0;
+}
