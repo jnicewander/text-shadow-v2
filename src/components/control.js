@@ -16,8 +16,7 @@ const Control = ({ values: { size, color }, index, controls, setControls }) => {
         controls={controls}
         setControls={setControls}
         index={index}
-      />    
-      {/* TODO aria-label for color picker? */}
+      />
       <ColorPicker
         index={index}
         color={color}
