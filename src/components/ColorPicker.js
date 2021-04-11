@@ -5,10 +5,10 @@ import './ColorPicker.css'
 const ColorPicker = ({ color, controls, setControls, index }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleColorInput = (colorObject) => {
-    const idx = index    
+  const handleColorInput = (color) => {
+    const idx = index
     const updatedControls = [...controls]
-    updatedControls[idx].color = colorObject.hex
+    updatedControls[idx].color = color.hex
     setControls(updatedControls)
   }
 
@@ -21,17 +21,18 @@ const ColorPicker = ({ color, controls, setControls, index }) => {
       onClick={() => setIsOpen(!isOpen)}
       style={{backgroundColor: color}}
     >
+      <span>{color}</span>
     </button>
-    <span>{color}</span>
     {
       isOpen &&
         <div
           className={`ColorPicker_Modal`}
-        >        
+        >
+          <div className={`ColorPicker_Cover`} onClick={() => setIsOpen(false)} />
           <ChromePicker
-            name="color"            
+            name="color"
             color={color}
-            onChange={(color, e) => handleColorInput(color, e)}
+            onChange={color => handleColorInput(color)}
           />
         </div>
     }
