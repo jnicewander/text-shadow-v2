@@ -1,0 +1,10 @@
+.Code {
+  display: inline-block;
+  background: #242B2E;
+  color: #CAD5E2;
+  font-size: .75rem;
+  padding: 1rem;
+}
+.Code span {
+  color: #35BDD0;
+}

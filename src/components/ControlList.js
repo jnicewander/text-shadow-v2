@@ -22,9 +22,9 @@ const ControlList = ({ initialShadow, controls, setControls }) => {
     <section className="ControlGroup">
       <header>
         <h2>Controls</h2>
-        <h3>Size</h3>
-        <h3>Color</h3>
-        <h3>Delete</h3>
+        <span>Size</span>
+        <span>Color</span>
+        <span>Delete</span>
       </header>
       <ul>
         {

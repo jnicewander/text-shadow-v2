@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Result from './components/Result'
 import DirectionGroup from './components/DirectionGroup'
 import ControlList from './components/ControlList'
+import Code from './components/Code'
 import buildString from './utilities/build-string'
 import './App.css';
 
@@ -41,6 +42,9 @@ function App() {
             result={result}
           />
         </div>
+          <Code 
+            result={result}
+          />
       </div>
     );
 }
