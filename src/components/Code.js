@@ -9,7 +9,7 @@ const Code = ({ result }) => {
       <code
         className="Code"
       >
-        <span>text-shadow: </span>{result};
+        <span>text-shadows:</span> {result};
       </code>
     </div>
   )

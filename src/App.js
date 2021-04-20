@@ -38,13 +38,17 @@ function App() {
               setControls={setControls}
             />
           </div>
-          <Result 
-            result={result}
-          />
+          <div
+            className="VerticalContainer"
+          >
+            <Result 
+              result={result}
+            />
+            <Code 
+              result={result}
+            />
+          </div>
         </div>
-          <Code 
-            result={result}
-          />
       </div>
     );
 }

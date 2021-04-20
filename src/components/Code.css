@@ -1,10 +1,18 @@
+.Code_Container {
+  padding: 1.5rem;
+}
 .Code {
   display: inline-block;
   background: #242B2E;
   color: #CAD5E2;
   font-size: .75rem;
-  padding: 1rem;
+  /* line clamp */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.5em;
 }
 .Code span {
-  color: #35BDD0;
+  color: #35BDD0;  
 }
