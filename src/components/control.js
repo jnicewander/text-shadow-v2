@@ -1,5 +1,6 @@
 import React from 'react'
 import DeleteButton from './DeleteButton'
+import AddButton from './AddButton'
 import SizeInput from './SizeInput'
 import ColorPicker from './ColorPicker'
 import './Control.css'
@@ -24,6 +25,11 @@ const Control = ({ values: { size, color }, index, controls, setControls }) => {
         setControls={setControls}
       />
       <DeleteButton
+        index={index}
+        controls={controls}
+        setControls={setControls}
+      />
+      <AddButton
         index={index}
         controls={controls}
         setControls={setControls}

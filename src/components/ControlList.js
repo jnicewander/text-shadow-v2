@@ -1,16 +1,8 @@
 import React from 'react'
 import Control from './Control'
-import { randomSize, randomColor } from '../utilities/random-shadow'
 import './ControlList.css'
 
-const ControlList = ({ initialShadow, controls, setControls }) => {
-
-  const addControl = (e) => {
-    e.preventDefault()
-    initialShadow.size = randomSize(5, 10)
-    initialShadow.color = randomColor()
-    setControls([ ...controls, { ...initialShadow }])
-  }
+const ControlList = ({ controls, setControls }) => {
 
   const handleControlInputs = (e) => {
     const updatedControls = [...controls]
@@ -41,11 +33,6 @@ const ControlList = ({ initialShadow, controls, setControls }) => {
             ))
         }
       </ul>
-      <button
-        onClick={addControl}
-      >
-        Add Control
-      </button>
     </section>
   )
 }

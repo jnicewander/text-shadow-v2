@@ -1,0 +1,17 @@
+/* original hex color #35BDD0 */
+.AddButton {
+  border: none;
+  outline: none;  
+  background: rgba(53, 189, 208, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transition: all 400ms;
+}
+.AddButton svg {
+  color: #CAD5E2;
+}
+.AddButton:hover {
+  background-color: rgba(53, 189, 208, .5);
+}
