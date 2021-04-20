@@ -4,6 +4,7 @@ import Result from './components/Result'
 import DirectionGroup from './components/DirectionGroup'
 import ControlList from './components/ControlList'
 import Code from './components/Code'
+import { randomSize, randomColor } from './utilities/random-shadow'
 import buildString from './utilities/build-string'
 import './App.css';
 
@@ -11,11 +12,18 @@ function App() {
   const [result, setResult] = useState('')
   
   // spreading the initialShadow into initial state allows us to clone and not mutate
-  const initialShadow = { 
-    size: '3', 
-    color: '#202020' 
-  }
-  const [controls, setControls] = useState([{ ...initialShadow }])
+  const initialShadow = [
+    { 
+      size: randomSize(5, 25), 
+      color: '#3f3f3f'
+    },
+    {
+      size: randomSize(10, 25),
+      color: '#707070'
+    },
+  ]
+
+  const [controls, setControls] = useState([ ...initialShadow ])
   const [direction, setDirection] = useState('bottomRight')
 
   useEffect(() => {

@@ -7,7 +7,7 @@ const ControlList = ({ initialShadow, controls, setControls }) => {
 
   const addControl = (e) => {
     e.preventDefault()
-    initialShadow.size = randomSize()
+    initialShadow.size = randomSize(5, 10)
     initialShadow.color = randomColor()
     setControls([ ...controls, { ...initialShadow }])
   }

@@ -4,7 +4,7 @@ const randomColor = ()  => {
   return  colors[Math.floor(Math.random() * 5)]
 }
 
-const randomSize = () => Math.ceil(Math.random() * 5)
+const randomSize = (min, max) => Math.ceil(Math.random() * (max-min) + min)
 
 export {
   randomColor,
