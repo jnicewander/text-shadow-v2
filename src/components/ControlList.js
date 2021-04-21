@@ -11,6 +11,7 @@ const ControlList = ({ controls, setControls }) => {
         <span>Size</span>
         <span>Color</span>
         <span>Delete</span>
+        <span>Add</span>
       </header>
       <ul>
         {
