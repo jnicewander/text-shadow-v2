@@ -4,12 +4,6 @@ import './ControlList.css'
 
 const ControlList = ({ controls, setControls }) => {
 
-  const handleControlInputs = (e) => {
-    const updatedControls = [...controls]
-    updatedControls[e.target.dataset.index][e.target.name] = e.target.value
-    setControls(updatedControls)
-  }
-
   return (
     <section className="ControlGroup">
       <header>
@@ -26,7 +20,6 @@ const ControlList = ({ controls, setControls }) => {
                 key={index}
                 values={values}
                 index={index}
-                handleControlInputs={handleControlInputs}
                 controls={controls}
                 setControls={setControls}
               />
