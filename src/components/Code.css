@@ -1,7 +1,8 @@
 .Code_Container {
+  position: relative;
   padding: 1.5rem;
 }
-.Code {
+.Code_Container code {
   display: inline-block;
   background: #242B2E;
   color: #CAD5E2;
@@ -13,6 +14,24 @@
   overflow: hidden;
   line-height: 1.5em;
 }
-.Code span {
+.Code_Container span {
   color: #35BDD0;  
+}
+.Code_Container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: hsl(322, 59%, 26%);
+  border: none;
+  color: #CAD5E2;
+  padding: .5em;
+  cursor: pointer;
+  margin: 1.5rem auto 0 auto;
+  min-width: 100px;
+}
+.Code_Container button:hover {
+  background: hsl(322deg, 59%, 50%);
+}
+.Code_Container button svg {
+  margin-right: .5em;
 }
