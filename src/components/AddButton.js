@@ -6,6 +6,7 @@ import './AddButton.css'
 const AddButton = ({ controls, setControls, index }) => {
   
   const newShadow = {
+    id: Math.floor(Math.random() * Date.now()),
     size: randomSize(5, 10),
     color: randomColor()
   }

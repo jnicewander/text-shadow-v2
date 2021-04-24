@@ -10,14 +10,19 @@ import './App.css';
 
 function App() {
   const [result, setResult] = useState('')
-  
-  // spreading the initialShadow into initial state allows us to clone and not mutate
+  /* 
+    spreading the initialShadow into initial state allows us to clone and not mutate
+    id temporary and not guaranteed to generate a unique id
+    required for unchanging key in mapped controls
+  */
   const initialShadow = [
-    { 
-      size: randomSize(5, 25), 
+    {
+      id: Math.floor(Math.random() * Date.now()),
+      size: randomSize(5, 25),
       color: '#3f3f3f'
     },
     {
+      id: Math.floor(Math.random() * Date.now()),
       size: randomSize(10, 25),
       color: '#707070'
     },

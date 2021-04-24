@@ -1,12 +1,14 @@
 .Control_Container {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
   margin: .5em 0;
-  row-gap: .25em;
 }
 .Control_Container:first-child {
   margin-top: 0;
+}
+.Control_Container > :nth-child(2) {
+  flex: 1;
+}
+.Control_Container > :last-child {
+  flex-basis: 100%;
 }

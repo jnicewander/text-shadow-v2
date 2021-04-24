@@ -1,5 +1,6 @@
 import React from 'react'
 import Control from './Control'
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './ControlList.css'
 
 const ControlList = ({ controls, setControls }) => {
@@ -12,20 +13,25 @@ const ControlList = ({ controls, setControls }) => {
         <span>Color</span>
         <span>Delete</span>
       </header>
-      <ul>
+      <TransitionGroup component='ul'>
         {
           controls.length &&
             controls.map((values, index) => (
-              <Control
-                key={index}
-                values={values}
-                index={index}
-                controls={controls}
-                setControls={setControls}
-              />
+              <CSSTransition
+                key={values.id}
+                timeout={500}
+                classNames="cg"
+              >
+                <Control
+                  values={values}
+                  index={index}
+                  controls={controls}
+                  setControls={setControls}
+                />
+              </CSSTransition>
             ))
         }
-      </ul>
+      </TransitionGroup>
     </section>
   )
 }

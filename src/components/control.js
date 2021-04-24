@@ -7,7 +7,6 @@ import './Control.css'
 
 
 const Control = ({ values: { size, color }, index, controls, setControls }) => {
-
   return (
     <li
       className={`Control_Container`}
