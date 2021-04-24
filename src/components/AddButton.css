@@ -1,12 +1,12 @@
 /* original hex color #35BDD0 */
 .AddButton {
-  border: none;
+  grid-column: 1 / 4;
+  border: 1px dashed #3f3f3f;
   outline: none;  
-  background: rgba(53, 189, 208, 1);
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   transition: all 400ms;
 }
 .AddButton svg {

@@ -18,6 +18,10 @@ input[type=number] {
   border: none;
   color: #CAD5E2;
   outline: none;
+  background-color: #242B2E;
+}
+.SizeInput_Container > button:hover {
+  background: #758283;
 }
 .SizeInput_Container > button:first-child {
   padding-left: .5em;
