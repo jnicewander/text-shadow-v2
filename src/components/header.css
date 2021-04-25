@@ -1,5 +1,14 @@
-.Header, .Header h1 a {
-  background-color: #0d0d0d;
+.Header {
+  background: #0d0d0d;
+  width: 100%;
+  padding: .35rem 1rem;  
+}
+.Header h1 {
+  font-size: 1rem;
+  font-size: clamp(1rem, 2.25vw, 2.25rem);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.Header h1 a {
   color: #CAD5E2;
-  border-bottom: 2px solid black;
 }

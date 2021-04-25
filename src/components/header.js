@@ -6,10 +6,8 @@ const Header = () => {
   return (
     <header className="Header">
       <h1>
-        <a 
-          href='/'          
-        >
-            3D Text Shadow Builder
+        <a href='/'>
+          Text Shadows v2
         </a>
       </h1>
     </header>
