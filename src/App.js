@@ -4,6 +4,7 @@ import Result from './components/Result'
 import DirectionGroup from './components/DirectionGroup'
 import ControlList from './components/ControlList'
 import Code from './components/Code'
+import Footer from './components/Footer'
 import { randomSize, randomColor } from './utilities/random-shadow'
 import buildString from './utilities/build-string'
 import './App.css';
@@ -62,6 +63,7 @@ function App() {
             />
           </div>
         </div>
+        <Footer />
       </div>
     );
 }
