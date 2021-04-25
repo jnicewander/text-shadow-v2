@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdRemoveCircleOutline } from 'react-icons/md'
+import { FaTrash } from 'react-icons/fa'
 import './DeleteButton.css'
 
 const DeleteButton = ({ controls, setControls, index}) => {
@@ -16,8 +16,9 @@ const DeleteButton = ({ controls, setControls, index}) => {
       aria-label="Delete Button"
       className="DeleteButton"
       onClick={e => handleClick(e)}
+      disabled={controls.length <= 1}
     >
-      <MdRemoveCircleOutline />
+      <FaTrash />      
     </button>
   )
 }
