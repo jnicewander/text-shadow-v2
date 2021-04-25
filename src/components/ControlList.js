@@ -14,23 +14,23 @@ const ControlList = ({ controls, setControls }) => {
         <span>Delete</span>
       </header>
       <TransitionGroup component='ul'>
-        {
-          controls.length &&
-            controls.map((values, index) => (
-              <CSSTransition
-                key={values.id}
-                timeout={500}
-                classNames="cg"
-              >
-                <Control
-                  values={values}
-                  index={index}
-                  controls={controls}
-                  setControls={setControls}
-                />
-              </CSSTransition>
-            ))
-        }
+        {controls.map((values, index) => (
+          <CSSTransition
+            key={values.id}
+            timeout={{
+              enter: 500,
+              exit: 300,
+            }}
+            classNames="cg"
+          >
+            <Control
+              values={values}
+              index={index}
+              controls={controls}
+              setControls={setControls}
+            />
+          </CSSTransition>
+        ))}
       </TransitionGroup>
     </section>
   )

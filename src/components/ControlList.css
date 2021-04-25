@@ -40,11 +40,10 @@
 .cg-exit {
   max-height: 500px;
   opacity: 1;
-  transform: translateX(0%);
 }
 .cg-exit-active {
+
   max-height: 0px;
   opacity: 0;
-  transform: translateX(100%);
-  transition: max-height 500ms linear, transform 100ms, opacity 300ms;
+  transition: max-height 300ms ease-in, opacity 200ms;
 }
