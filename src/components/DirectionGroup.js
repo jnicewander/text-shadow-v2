@@ -1,11 +1,11 @@
 import React from 'react'
-import { FaArrowCircleUp } from 'react-icons/fa'
+import DirectionButton from './DirectionButton'
 import './DirectionGroup.css'
 
 const DirectionGroup = ({ direction, setDirection }) => {
-
-  const handleClick = (e) => {
+  const handleChange = e => {
     setDirection(e.target.value)
+
   }
 
   return (
@@ -14,69 +14,56 @@ const DirectionGroup = ({ direction, setDirection }) => {
       aria-label="Shadow Direction"
     >
       <h2>Direction</h2>
-      <p>Control the shadow direction</p>
-      
-      <label
-        className="DirectionLabel"
-      >
-        <input
-          className="DirectionInput"
-          aria-label="Bottom Left" 
-          type="radio" 
-          name="direction" 
-          value="bottomLeft"
-          checked={direction === "bottomLeft"}
-          onChange={handleClick}
+      <div>
+        <DirectionButton 
+          aria-label="Top"
+          value={"top"}
+          direction={direction}
+          onChange={e => handleChange(e)}
         />
-        <FaArrowCircleUp />
-        <div className="SvgBackground"></div>
-      </label>
-      <label
-        className="DirectionLabel"
-      >        
-        <input
-          className="DirectionInput"
-          aria-label="Top Right" 
-          type="radio" 
-          name="direction" 
-          value="topRight"
-          checked={direction === "topRight"}
-          onChange={handleClick}
+        <DirectionButton 
+          aria-label="Top Right"
+          value={"topRight"}
+          direction={direction}
+          onChange={e => handleChange(e)}
         />
-        <FaArrowCircleUp />
-        <div className="SvgBackground"></div>
-      </label>
-      <label
-        className="DirectionLabel"
-      >        
-        <input
-          className="DirectionInput"
-          aria-label="Bottom Right" 
-          type="radio"
-          name="direction" 
-          value="bottomRight"
-          checked={direction === "bottomRight"}
-          onChange={handleClick}
+        <DirectionButton 
+          aria-label="Right"
+          value={"right"}
+          direction={direction}
+          onChange={e => handleChange(e)}
+        />      
+        <DirectionButton 
+          aria-label="Bottom Right"
+          value={"bottomRight"}
+          direction={direction}
+          onChange={e => handleChange(e)}
         />
-        <FaArrowCircleUp />
-        <div className="SvgBackground"></div>
-      </label>
-      <label
-        className="DirectionLabel"
-      >        
-        <input
-          className="DirectionInput"
-          aria-label="Top Left" 
-          type="radio" 
-          name="direction" 
-          value="topLeft"
-          checked={direction === "topLeft"}
-          onChange={handleClick}
+        <DirectionButton 
+          aria-label="Bottom"
+          value={"bottom"}
+          direction={direction}
+          onChange={e => handleChange(e)}
         />
-        <FaArrowCircleUp />
-        <div className="SvgBackground"></div>
-      </label>
-      
+        <DirectionButton 
+          aria-label="Bottom Left"
+          value={"bottomLeft"}
+          direction={direction}
+          onChange={e => handleChange(e)}
+        />
+        <DirectionButton 
+          aria-label="Left"
+          value={"left"}
+          direction={direction}
+          onChange={e => handleChange(e)}
+        />            
+        <DirectionButton 
+          aria-label="Top Left"
+          value={"topLeft"}
+          direction={direction}
+          onChange={e => handleChange(e)}
+        />
+      </div>
     </div>
   )
 }

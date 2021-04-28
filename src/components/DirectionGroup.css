@@ -1,69 +1,13 @@
 .DirectionGroup {
-  background-color: #0d0d0d;
+  background: #0d0d0d;
   color: #CAD5E2;
+  margin: 1rem;
 }
-.DirectionLabel {
-  position: relative;
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  line-height: 0;
-}
-.DirectionLabel svg {
-  position: relative;
-  height: 2.5em;
-  width: 2.5em;
-  z-index: 3;
-}
-/* "hack" to add duotone support to svg icon */
-.SvgBackground {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 2.25em;
-  height: 2.25em;
-  border-radius: 50%;
-}
-.DirectionLabel:hover svg {
-  color: #35BDD0;
-}
-.DirectionLabel:hover .SvgBackground {
-  background-color: #CAD5E2;
-}
-/* rotate the arrow icons so they point the correct direction */
-.DirectionLabel:nth-of-type(1) svg {
-  transform: rotate(calc(45deg * 5));
-}
-.DirectionLabel:nth-of-type(2) svg {
-  transform: rotate(calc(45deg * 1));
-}
-.DirectionLabel:nth-of-type(3) svg {
-  transform: rotate(calc(45deg * 3));
-}
-.DirectionLabel:nth-of-type(4) svg {
-  transform: rotate(calc(45deg * 7));
-  margin-right: 0;
-}
-
-/* hide radio input circle and retain functionality */
-.DirectionInput {
-  position: absolute;
-  display: inline-block;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  pointer-events: none;
-  margin: 0;  
-}
-.DirectionInput:checked + svg {
-  color: #35BDD0;
-}
-.DirectionInput:active + svg {
-  color: #758283;
-}
-.DirectionInput:checked~.SvgBackground {
-  background-color: #fff;
+.DirectionGroup > div {
+  margin: .5rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  text-align: center;
+  align-items: center;
 }
