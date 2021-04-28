@@ -1,14 +1,25 @@
-.AppMain {
-  display: flex;
-  flex-direction: column-reverse;
-}
-@media screen and (min-width: 750px) {
-  .AppMain {
-    flex-direction: row;
-  }
-}
-.App .VerticalContainer {
+.App {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+.App main {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+.App main > :nth-child(1) {
+  flex: 1;
+  flex-basis: 70%;
+}
+.App main > :nth-child(2) {
+  flex: 2;
+  flex-basis: 30%;
 }
