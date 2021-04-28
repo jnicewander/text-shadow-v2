@@ -18,12 +18,12 @@ function App() {
     {
       id: Math.floor(Math.random() * Date.now()),
       size: randomSize(5, 25),
-      color: '#ffdf6c'
+      color: '#6C92FF'
     },
     {
       id: Math.floor(Math.random() * Date.now()),
       size: randomSize(10, 25),
-      color: '#707070'
+      color: '#5b4cbc'
     },
   ]
 

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import Code from './Code'
 import './Result.css'
 
 const DisplayText = ({ result }) => {
   const [isEditing, setEditing] = useState(false)
-  const [sampleText, setSampleText] = useState('3D Text Shadows')
+  const [sampleText, setSampleText] = useState('Edit This Text')
   const testShadowStyle = {
     "textShadow": result
   }
@@ -36,6 +37,9 @@ const DisplayText = ({ result }) => {
           </span>
         </div>
       )}
+      <Code
+        result={result}
+      />
     </section>
   )
 }

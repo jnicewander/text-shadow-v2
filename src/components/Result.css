@@ -1,32 +1,39 @@
 .Result {
-  border: 1px solid #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 200px;
-  height: 25vh;
   overflow: hidden;
 }
+.Result > :first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 300px;
+  margin: 4rem;
+}
+.Result > :nth-child(2) {
+  margin: 4rem;
+  background: #0d0d0d52;
+}
+
 .SampleText {
   background: none;
   border: none;
   outline: none;
-  color: #fff;
+  color: #CAD5E2;
   font: bold 2rem "Poppins";
   caret-color: #fff;
   text-align: center;
   margin: 0;
   padding: 0;
   width: 100%;
+  /* line clamp */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.5em;
 }
 
 @media screen and (min-width: 750px) {
-  .Result {
-    min-height: 50vh;
-    height: 100%;
-  }
   .SampleText {
     font-size: 2.5rem;
   }
