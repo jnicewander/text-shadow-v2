@@ -1,28 +1,18 @@
 .ControlGroup {
   display: flex;
   flex-direction: column;
-  background-color: #0d0d0d;
+  background: #0d0d0d;
   color: #CAD5E2;
-  border-top: 1px solid #CAD5E2;
-  margin-top: .5em;
+  width: 100%;
 }
 .ControlGroup header {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-.ControlGroup header h2 {
-  grid-column: 1 / 4;
-}
-.ControlGroup header span {
-  grid-row: 2;
-  align-self: end;
-  justify-self: center;
+  margin: 0 1rem;
 }
 .ControlGroup ul {
   min-height: 300px;
-  height: 50vh;
+  height: 60vh;
   overflow-y: auto;
+  margin: .5rem 1rem;
 }
 
 /* CSSTransition Styles */
@@ -42,7 +32,6 @@
   opacity: 1;
 }
 .cg-exit-active {
-
   max-height: 0px;
   opacity: 0;
   transition: max-height 300ms ease-in, opacity 200ms;

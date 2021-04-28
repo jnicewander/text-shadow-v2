@@ -1,17 +1,19 @@
 import React from 'react'
 import Control from './Control'
+import DirectionGroup from './DirectionGroup'
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './ControlList.css'
 
-const ControlList = ({ controls, setControls }) => {
+const ControlList = ({ controls, setControls, direction, setDirection }) => {
 
   return (
     <section className="ControlGroup">
+      <DirectionGroup
+        direction={direction}
+        setDirection={setDirection}
+      />
       <header>
         <h2>Controls</h2>
-        <span>Size</span>
-        <span>Color</span>
-        <span>Delete</span>
       </header>
       <TransitionGroup component='ul'>
         {controls.map((values, index) => (
@@ -31,7 +33,7 @@ const ControlList = ({ controls, setControls }) => {
             />
           </CSSTransition>
         ))}
-      </TransitionGroup>
+      </TransitionGroup>      
     </section>
   )
 }
