@@ -1,3 +1,9 @@
 .Footer_Container {
-  border: solid white;
+  padding: .35rem 1rem;
+  width: 100%;
+  background: #0d0d0d;
+  color: #cad5e26b;
+}
+.Footer_Container a {
+  color: #fff;
 }
