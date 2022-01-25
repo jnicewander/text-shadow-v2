@@ -1,39 +1,41 @@
 function buildString(arrayOfControls, directionString) {
-  let resultArray = [];
-  let sizeTracker = 0;
+  let resultArray = []
+  let sizeTracker = 0
 
-  arrayOfControls.forEach(control=> {
-    for (let i = 0; i < control.size; i++) {      
-      resultArray.push(cssString(directionString, sizeTracker + 1, control.color))
-      sizeTracker++;
+  arrayOfControls.forEach((control) => {
+    for (let i = 0; i < control.size; i++) {
+      resultArray.push(
+        cssString(directionString, sizeTracker + 1, control.color)
+      )
+      sizeTracker++
     }
   })
 
-  const resultString = resultArray.join('');
+  const resultString = resultArray.join('')
   const formatResult = resultString.substring(0, resultString.length - 2)
-  return formatResult;
+  return formatResult
 }
 
 function cssString(direction, size, color) {
   switch (direction) {
-    case "top":
+    case 'top':
       return `0px -${size}px ${color}, `
-    case "topRight":      
+    case 'topRight':
       return `${size}px -${size}px ${color}, `
-    case "right":
+    case 'right':
       return `${size}px 0px ${color}, `
-    case "bottomRight":
+    case 'bottomRight':
       return `${size}px ${size}px ${color}, `
-    case "bottom":
+    case 'bottom':
       return `0px ${size}px ${color}, `
-    case "bottomLeft":
+    case 'bottomLeft':
       return `-${size}px ${size}px ${color}, `
-    case "left":
+    case 'left':
       return `-${size}px 0px ${color}, `
-    case "topLeft":
+    case 'topLeft':
       return `-${size}px -${size}px ${color}, `
     default:
-      break;
+      break
   }
 }
 

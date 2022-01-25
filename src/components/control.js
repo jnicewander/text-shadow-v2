@@ -5,13 +5,10 @@ import SizeInput from './SizeInput'
 import ColorPicker from './ColorPicker'
 import './Control.css'
 
-
 const Control = ({ values: { size, color }, index, controls, setControls }) => {
   return (
-    <li
-      className={`Control_Container`}
-    >
-      <SizeInput 
+    <li className={`Control_Container`}>
+      <SizeInput
         size={size}
         controls={controls}
         setControls={setControls}
@@ -28,11 +25,7 @@ const Control = ({ values: { size, color }, index, controls, setControls }) => {
         controls={controls}
         setControls={setControls}
       />
-      <AddButton
-        index={index}
-        controls={controls}
-        setControls={setControls}
-      />
+      <AddButton index={index} controls={controls} setControls={setControls} />
     </li>
   )
 }
