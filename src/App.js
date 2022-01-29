@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Header from './components/Header'
 import Result from './components/Result'
-import ControlList from './components/ControlList'
 import Footer from './components/Footer'
 import { randomSize } from './utilities/random-shadow'
 import buildString from './utilities/build-string'
+import Control from './components/Control'
+import DirectionGroup from './components/DirectionGroup'
 import './App.css'
 
 function App() {
@@ -40,13 +42,30 @@ function App() {
       <Header />
       <main>
         <Result result={result} />
-        <ControlList
-          initialShadow={initialShadow}
-          controls={controls}
-          setControls={setControls}
-          direction={direction}
-          setDirection={setDirection}
-        />
+        <section className='controlPanel'>
+          <DirectionGroup direction={direction} setDirection={setDirection} />
+          <header>
+            <h2>Controls</h2>
+          </header>
+          <TransitionGroup component='ul'>
+            {controls.map((values, index) => (
+              <CSSTransition
+                key={values.id}
+                timeout={{
+                  enter: 500,
+                  exit: 300,
+                }}
+                classNames='cg'>
+                <Control
+                  values={values}
+                  index={index}
+                  controls={controls}
+                  setControls={setControls}
+                />
+              </CSSTransition>
+            ))}
+          </TransitionGroup>
+        </section>
       </main>
       <Footer />
     </div>
