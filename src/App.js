@@ -5,7 +5,7 @@ import ControlList from './components/ControlList'
 import Footer from './components/Footer'
 import { randomSize } from './utilities/random-shadow'
 import buildString from './utilities/build-string'
-import './App.css';
+import './App.css'
 
 function App() {
   const [result, setResult] = useState('')
@@ -18,16 +18,16 @@ function App() {
     {
       id: Math.floor(Math.random() * Date.now()),
       size: randomSize(5, 25),
-      color: '#6C92FF'
+      color: '#6C92FF',
     },
     {
       id: Math.floor(Math.random() * Date.now()),
       size: randomSize(10, 25),
-      color: '#5b4cbc'
+      color: '#5b4cbc',
     },
   ]
 
-  const [controls, setControls] = useState([ ...initialShadow ])
+  const [controls, setControls] = useState([...initialShadow])
   const [direction, setDirection] = useState('bottomRight')
 
   useEffect(() => {
@@ -36,23 +36,21 @@ function App() {
   }, [controls, direction])
 
   return (
-      <div className='App'>
-        <Header />
-        <main>
-          <Result
-            result={result}
-          />
-          <ControlList
-            initialShadow={initialShadow} 
-            controls={controls}
-            setControls={setControls}
-            direction={direction}
-            setDirection={setDirection}
-          />
-        </main>
-        <Footer />
-      </div>
-    );
+    <div className='App'>
+      <Header />
+      <main>
+        <Result result={result} />
+        <ControlList
+          initialShadow={initialShadow}
+          controls={controls}
+          setControls={setControls}
+          direction={direction}
+          setDirection={setDirection}
+        />
+      </main>
+      <Footer />
+    </div>
+  )
 }
 
-export default App;
+export default App

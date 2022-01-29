@@ -1,18 +1,18 @@
-.ControlGroup {
+.controlPanel {
   display: flex;
   flex-direction: column;
   background: #0d0d0d;
-  color: #CAD5E2;
+  color: #cad5e2;
   width: 100%;
 }
-.ControlGroup header {
+.controlPanel header {
   margin: 0 1rem;
 }
-.ControlGroup ul {
+.controlPanel ul {
   min-height: 300px;
   height: 60vh;
   overflow-y: auto;
-  margin: .5rem 1rem;
+  margin: 0.5rem 1rem;
 }
 
 /* CSSTransition Styles */
