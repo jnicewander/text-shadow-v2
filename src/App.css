@@ -62,3 +62,17 @@
   opacity: 0;
   transition: max-height 300ms ease-in, opacity 200ms;
 }
+
+.directionGroup {
+  background: #0d0d0d;
+  color: #cad5e2;
+  margin: 1rem;
+}
+.directionGroup > div {
+  margin: 0.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  text-align: center;
+  align-items: center;
+}

@@ -6,7 +6,7 @@ import Footer from './components/Footer'
 import { randomSize } from './utilities/random-shadow'
 import buildString from './utilities/build-string'
 import Control from './components/Control'
-import DirectionGroup from './components/DirectionGroup'
+import DirectionButton from './components/DirectionButton'
 import './App.css'
 
 function App() {
@@ -37,13 +37,37 @@ function App() {
     setResult(result)
   }, [controls, direction])
 
+  const directions = [
+    { ariaLabel: 'Top', value: 'top' },
+    { ariaLabel: 'Top Right', value: 'topRight' },
+    { ariaLabel: 'Right', value: 'right' },
+    { ariaLabel: 'Bottom Right', value: 'bottomRight' },
+    { ariaLabel: 'Bottom', value: 'bottom' },
+    { ariaLabel: 'Bottom Left', value: 'bottomLeft' },
+    { ariaLabel: 'Left', value: 'left' },
+    { ariaLabel: 'Top Left', value: 'topLeft' },
+  ]
+
   return (
     <div className='App'>
       <Header />
       <main>
         <Result result={result} />
         <section className='controlPanel'>
-          <DirectionGroup direction={direction} setDirection={setDirection} />
+          <div className='directionGroup' aria-label='Shadow Direction'>
+            <h2>Direction</h2>
+            <div>
+              {directions.map(({ ariaLabel, value }) => (
+                <DirectionButton
+                  key={value}
+                  aria-label={ariaLabel}
+                  value={value}
+                  direction={direction}
+                  onChange={(e) => setDirection(e.target.value)}
+                />
+              ))}
+            </div>
+          </div>
           <header>
             <h2>Controls</h2>
           </header>
