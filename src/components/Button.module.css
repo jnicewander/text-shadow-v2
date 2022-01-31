@@ -1,0 +1,46 @@
+.baseBtn {
+  outline: none;
+  font-family: inherit;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.addBtn {
+  border: 1px dashed #3f3f3f;
+  outline: none;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 0;
+  transition: all 400ms;
+}
+.addBtn svg {
+  color: #cad5e2;
+}
+.addBtn:hover {
+  background-color: rgba(53, 189, 208, 0.5);
+}
+
+.deleteBtn {
+  position: relative;
+  border: none;
+  background: #242b2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 400ms;
+}
+.deleteBtn svg {
+  color: #ff6666;
+}
+.deleteBtn:hover {
+  background: hsl(198deg, 12%, 30%);
+}
+.deleteBtn:disabled {
+  background: hsla(198deg, 12%, 16%, 0.25);
+  cursor: auto;
+}
+.deleteBtn:disabled svg {
+  color: hsla(0deg, 100%, 70%, 0.25);
+}

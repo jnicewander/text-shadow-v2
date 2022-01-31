@@ -1,11 +1,31 @@
 import React from 'react'
-import DeleteButton from './DeleteButton'
-import AddButton from './AddButton'
+import './Control.css'
 import SizeInput from './SizeInput'
 import ColorPicker from './ColorPicker'
-import './Control.css'
+import { AddButton, DeleteButton } from './Button'
+import { randomSize, randomColor } from '../utilities/random-shadow'
 
 const Control = ({ values: { size, color }, index, controls, setControls }) => {
+  const newShadow = {
+    id: Math.floor(Math.random() * Date.now()),
+    size: randomSize(5, 10),
+    color: randomColor(),
+  }
+
+  const addShadow = (e) => {
+    e.preventDefault()
+    const updatedControls = [...controls]
+    updatedControls.splice(index + 1, 0, newShadow)
+    setControls(updatedControls)
+  }
+
+  const deleteShadow = (e) => {
+    e.preventDefault()
+    const updatedControls = [...controls]
+    updatedControls.splice(index, 1)
+    setControls(updatedControls)
+  }
+
   return (
     <li className={`Control_Container`}>
       <SizeInput
@@ -20,12 +40,8 @@ const Control = ({ values: { size, color }, index, controls, setControls }) => {
         controls={controls}
         setControls={setControls}
       />
-      <DeleteButton
-        index={index}
-        controls={controls}
-        setControls={setControls}
-      />
-      <AddButton index={index} controls={controls} setControls={setControls} />
+      <DeleteButton index={index} handleClick={deleteShadow} />
+      <AddButton index={index} handleClick={addShadow} />
     </li>
   )
 }
