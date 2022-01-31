@@ -1,11 +1,11 @@
-.baseBtn {
+.base {
   outline: none;
   font-family: inherit;
   font-weight: 400;
   cursor: pointer;
 }
 
-.addBtn {
+.add {
   border: 1px dashed #3f3f3f;
   outline: none;
   background: transparent;
@@ -15,14 +15,16 @@
   padding: 0.5em 0;
   transition: all 400ms;
 }
-.addBtn svg {
+.add svg {
   color: #cad5e2;
 }
-.addBtn:hover {
-  background-color: rgba(53, 189, 208, 0.5);
+@media (hover: hover) {
+  .add:hover {
+    background-color: rgba(53, 189, 208, 0.5);
+  }
 }
 
-.deleteBtn {
+.delete {
   position: relative;
   border: none;
   background: #242b2e;
@@ -31,16 +33,62 @@
   align-items: center;
   transition: all 400ms;
 }
-.deleteBtn svg {
+.delete svg {
   color: #ff6666;
 }
-.deleteBtn:hover {
-  background: hsl(198deg, 12%, 30%);
+@media (hover: hover) {
+  .delete:hover {
+    background: hsl(198deg, 12%, 30%);
+  }
 }
-.deleteBtn:disabled {
+.delete:disabled {
   background: hsla(198deg, 12%, 16%, 0.25);
   cursor: auto;
 }
-.deleteBtn:disabled svg {
+.delete:disabled svg {
   color: hsla(0deg, 100%, 70%, 0.25);
+}
+
+.direction {
+  border: 1px solid #242b2e;
+  padding: 0.5rem;
+}
+@media (hover: hover) {
+  .direction:hover {
+    background: #242b2e;
+  }
+}
+
+/* directionBtn span shadows */
+.top {
+  text-shadow: 0px -1px #e07c24, 0px -2px #e07c24, 0px -3px #e07c24,
+    0px -4px #e07c24, 0px -5px #e07c24;
+}
+.topRight {
+  text-shadow: 1px -1px #e07c24, 2px -2px #e07c24, 3px -3px #e07c24,
+    4px -4px #e07c24, 5px -5px #e07c24;
+}
+.right {
+  text-shadow: 1px 0px #e07c24, 2px 0px #e07c24, 3px 0px #e07c24,
+    4px 0px #e07c24, 5px 0px #e07c24;
+}
+.bottomRight {
+  text-shadow: 1px 1px #e07c24, 2px 2px #e07c24, 3px 3px #e07c24,
+    4px 4px #e07c24, 5px 5px #e07c24;
+}
+.bottom {
+  text-shadow: 0px 1px #e07c24, 0px 2px #e07c24, 0px 3px #e07c24,
+    0px 4px #e07c24, 0px 5px #e07c24;
+}
+.bottomLeft {
+  text-shadow: -1px 1px #e07c24, -2px 2px #e07c24, -3px 3px #e07c24,
+    -4px 4px #e07c24, -5px 5px #e07c24;
+}
+.left {
+  text-shadow: -1px 0px #e07c24, -2px 0px #e07c24, -3px 0px #e07c24,
+    -4px 0px #e07c24, -5px 0px #e07c24;
+}
+.topLeft {
+  text-shadow: -1px -1px #e07c24, -2px -2px #e07c24, -3px -3px #e07c24,
+    -4px -4px #e07c24, -5px -5px #e07c24;
 }
