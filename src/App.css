@@ -71,8 +71,11 @@
 .directionGroup > div {
   margin: 0.5rem 0;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   text-align: center;
   align-items: center;
+}
+.directionGroup > div > :nth-child(5) {
+  grid-column: 3 / 4;
 }

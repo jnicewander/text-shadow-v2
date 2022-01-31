@@ -38,14 +38,14 @@ function App() {
   }, [controls, direction])
 
   const directions = [
+    { ariaLabel: 'Top Left', value: 'topLeft' },
     { ariaLabel: 'Top', value: 'top' },
     { ariaLabel: 'Top Right', value: 'topRight' },
-    { ariaLabel: 'Right', value: 'right' },
-    { ariaLabel: 'Bottom Right', value: 'bottomRight' },
-    { ariaLabel: 'Bottom', value: 'bottom' },
-    { ariaLabel: 'Bottom Left', value: 'bottomLeft' },
     { ariaLabel: 'Left', value: 'left' },
-    { ariaLabel: 'Top Left', value: 'topLeft' },
+    { ariaLabel: 'Right', value: 'right' },
+    { ariaLabel: 'Bottom Left', value: 'bottomLeft' },
+    { ariaLabel: 'Bottom', value: 'bottom' },
+    { ariaLabel: 'Bottom Right', value: 'bottomRight' },
   ]
 
   return (
