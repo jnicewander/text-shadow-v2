@@ -3,39 +3,42 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Header from './components/Header'
 import Result from './components/Result'
 import Footer from './components/Footer'
-import { randomSize } from './utilities/random-shadow'
+import { randomSize, randomColor } from './utilities/random-shadow'
 import buildString from './utilities/build-string'
 import Control from './components/Control'
 import DirectionButton from './components/DirectionButton'
 import './App.css'
+import useShadows from 'hooks/useShadows'
+import { AddButton } from 'components/Button'
+import { DeleteButton } from 'components/Button'
+import ColorPicker from 'components/ColorPicker'
+import SizeInput from 'components/SizeInput'
 
 function App() {
+  const initialState = {
+    shadows: [
+      { id: 1, size: 6, color: '#6C92FF' },
+      { id: 2, size: 10, color: '#5b4cbc' },
+    ],
+  }
+  const [
+    state,
+    {
+      addShadow,
+      updateShadow,
+      deleteShadow,
+      increaseSize,
+      decreaseSize,
+      changeColor,
+    },
+  ] = useShadows(initialState)
   const [result, setResult] = useState('')
-  /* 
-    spreading the initialShadow into initial state allows us to clone and not mutate
-    id temporary and not guaranteed to generate a unique id
-    required for unchanging key in mapped controls
-  */
-  const initialShadow = [
-    {
-      id: Math.floor(Math.random() * Date.now()),
-      size: randomSize(5, 25),
-      color: '#6C92FF',
-    },
-    {
-      id: Math.floor(Math.random() * Date.now()),
-      size: randomSize(10, 25),
-      color: '#5b4cbc',
-    },
-  ]
-
-  const [controls, setControls] = useState([...initialShadow])
   const [direction, setDirection] = useState('bottomRight')
 
   useEffect(() => {
-    const result = buildString(controls, direction)
+    const result = buildString(state.shadows, direction)
     setResult(result)
-  }, [controls, direction])
+  }, [state.shadows, direction])
 
   const directions = [
     { ariaLabel: 'Top Left', value: 'topLeft' },
@@ -68,24 +71,42 @@ function App() {
               ))}
             </div>
           </div>
+
           <header>
             <h2>Controls</h2>
           </header>
           <TransitionGroup component='ul'>
-            {controls.map((values, index) => (
+            {state.shadows.map(({ id, size, color }) => (
               <CSSTransition
-                key={values.id}
+                key={id}
                 timeout={{
                   enter: 500,
                   exit: 300,
                 }}
                 classNames='cg'>
-                <Control
-                  values={values}
-                  index={index}
-                  controls={controls}
-                  setControls={setControls}
-                />
+                <Control id={id} size={size} color={color}>
+                  <SizeInput
+                    id={id}
+                    size={size}
+                    decrement={decreaseSize}
+                    increment={increaseSize}
+                    update={updateShadow}
+                  />
+                  <ColorPicker
+                    id={id}
+                    color={color}
+                    changeColor={changeColor}
+                  />
+                  <DeleteButton handleClick={() => deleteShadow(id)} />
+                  <AddButton
+                    handleClick={() =>
+                      addShadow(id, {
+                        size: randomSize(),
+                        color: randomColor(),
+                      })
+                    }
+                  />
+                </Control>
               </CSSTransition>
             ))}
           </TransitionGroup>

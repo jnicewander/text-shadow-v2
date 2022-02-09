@@ -2,40 +2,34 @@ import React, { useState } from 'react'
 import { ChromePicker } from 'react-color'
 import './ColorPicker.css'
 
-const ColorPicker = ({ color, controls, setControls, index }) => {
+const ColorPicker = ({ id, color, changeColor }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const handleColorInput = (color) => {
-    const idx = index
-    const updatedControls = [...controls]
-    updatedControls[idx].color = color.hex
-    setControls(updatedControls)
+  const handleChange = (color) => {
+    changeColor(id, color.hex)
   }
 
   return (
-    <div
-      className={`ColorPicker_Container`}
-    >
-    <button
-      className={`ColorPicker_Button`}
-      onClick={() => setIsOpen(!isOpen)}
-      style={{backgroundColor: color}}
-    >
-      <span>{color}</span>
-    </button>
-    {
-      isOpen &&
-        <div
-          className={`ColorPicker_Modal`}
-        >
-          <div className={`ColorPicker_Cover`} onClick={() => setIsOpen(false)} />
+    <div className={`ColorPicker_Container`}>
+      <button
+        className={`ColorPicker_Button`}
+        onClick={() => setIsOpen(!isOpen)}
+        style={{ backgroundColor: color }}>
+        <span>{color}</span>
+      </button>
+      {isOpen && (
+        <div className={`ColorPicker_Modal`}>
+          <div
+            className={`ColorPicker_Cover`}
+            onClick={() => setIsOpen(false)}
+          />
           <ChromePicker
-            name="color"
+            name='color'
             color={color}
-            onChange={color => handleColorInput(color)}
+            onChange={(color) => handleChange(color)}
           />
         </div>
-    }
+      )}
     </div>
   )
 }
