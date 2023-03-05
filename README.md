@@ -1,12 +1,13 @@
 # Text Shadow Generator
 
-Easily generate the CSS for three-dimensional text-shadows.
+A graphical user interface for generating CSS styles for three-dimensional text-shadows.
 
 ## About
 
 I originally created this project with vanilla JavaScript, HTML5, and SCSS to build something original without following a tutorial. The original version will be re-uploaded in the future as a reference.
 
 This version (v2) was built with Create React App to help me improve my React knowledge. I ended up going with standard CSS for the styling because I mainly use Styled Components and SCSS at work and on other projects.
+
 ## Color Scheme
 
 These are the colors I'm currently using throughout for consistency. Grabbed the pallet from [UI Color Picker](https://uicolorpicker.com/)
