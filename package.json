@@ -12,9 +12,6 @@
     "react-transition-group": "^4.4.2",
     "web-vitals": "^1.1.2"
   },
-  "devDependencies": {
-    "gh-pages": "^5.0.0"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
