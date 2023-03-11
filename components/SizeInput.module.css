@@ -1,0 +1,47 @@
+/* remove default arrows from number input field */
+.SizeInput_Container input::-webkit-outer-spin-button,
+.SizeInput_Container input::-webkit-inner-spin-button,
+.SizeInput_Container input[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  margin: 0;
+}
+
+.SizeInput_Container {
+  display: flex;
+}
+
+.SizeInput_Buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.SizeInput_Container>button {
+  background: none;
+  border: none;
+  color: #CAD5E2;
+  outline: none;
+  background-color: #242B2E;
+}
+
+.SizeInput_Container>button:hover {
+  background: #758283;
+}
+
+.SizeInput_Container>button:first-child {
+  padding-left: .5em;
+}
+
+.SizeInput_Container>button:last-child {
+  padding-right: .5em;
+}
+
+.SizeInput {
+  text-align: center;
+  width: 2.75em;
+  border: none;
+  background-color: #242B2E;
+  color: #CAD5E2;
+  outline: none;
+  padding: .5em 0;
+}
