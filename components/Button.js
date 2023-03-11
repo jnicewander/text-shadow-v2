@@ -43,7 +43,7 @@ export const DeleteButton = ({ disabled = false, ...props }) => {
   )
 }
 
-export const DirectionButton = ({ className, value, ...props }) => {
+export const DirectionButton = ({ value, ...props }) => {
   return (
     <Button className={styles.direction} value={value} {...props}>
       <span className={styles[value]}>TS</span>
